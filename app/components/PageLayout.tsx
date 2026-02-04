@@ -20,6 +20,7 @@ import {
   IconBag,
   IconSearch,
 } from '~/components/Icon';
+import {SimpleChatLogo, SimpleChatIcon} from '~/components/SimpleChatLogo';
 import {
   type EnhancedMenu,
   type ChildEnhancedMenuItem,
@@ -229,12 +230,7 @@ function MobileHeader({
         className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
         to="/"
       >
-        <Heading
-          className="font-bold text-center leading-none"
-          as={isHome ? 'h1' : 'h2'}
-        >
-          {title}
-        </Heading>
+        <SimpleChatIcon className="w-8 h-8" />
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -269,11 +265,11 @@ function DesktopHeader({
         !isHome && y > 50 && ' shadow-lightHeader'
       } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
     >
-      <div className="flex gap-12">
-        <Link className="font-bold" to="/" prefetch="intent">
-          {title}
+      <div className="flex gap-12 items-center">
+        <Link className="flex items-center gap-2" to="/" prefetch="intent">
+          <SimpleChatLogo dark={isHome} />
         </Link>
-        <nav className="flex gap-8">
+        <nav className="flex gap-8 items-center">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
             <Link
