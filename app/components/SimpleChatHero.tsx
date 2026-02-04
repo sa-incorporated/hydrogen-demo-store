@@ -242,16 +242,70 @@ export function GettingStartedSection() {
 }
 
 export function SimpleChatFooter() {
+  const legalLinks = [
+    {name: 'Privacy Policy', href: '/privacy-policy'},
+    {name: 'Cookie Policy', href: '/cookie-policy'},
+    {name: 'Terms & Conditions', href: '/terms-and-conditions'},
+    {name: 'Data Protection', href: '/compliance-data-protection'},
+  ];
+
+  const platformLinks = [
+    {name: 'Install App', href: 'https://apps.shopify.com/simple-chat'},
+    {name: 'Book a Demo', href: 'https://simple-chat.com/book-a-demo'},
+    {name: 'Contact Us', href: 'mailto:admin@simple-chat.com'},
+  ];
+
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3">
-            <SimpleChatIcon className="w-12 h-12" />
-            <span className="text-xl font-semibold">Simple Chat</span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <SimpleChatIcon className="w-10 h-10" />
+              <span className="text-xl font-semibold">Simple Chat</span>
+            </div>
+            <p className="text-gray-400 text-sm max-w-sm">
+              AI-powered customer support for Shopify stores. Resolve questions
+              automatically, instantly, using your store's info.
+            </p>
           </div>
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Simple Chat. All rights reserved.
+
+          <div>
+            <h3 className="font-semibold mb-4">Platform</h3>
+            <ul className="space-y-2">
+              {platformLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-8">
+          <p className="text-gray-500 text-sm text-center">
+            &copy; {new Date().getFullYear()} SA Inc. All rights reserved.
           </p>
         </div>
       </div>

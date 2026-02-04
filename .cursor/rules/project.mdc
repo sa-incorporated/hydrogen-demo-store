@@ -1,0 +1,29 @@
+---
+description: Simple Chat project context and design resources
+alwaysApply: true
+---
+
+# Simple Chat Website
+
+A Shopify Hydrogen storefront for simple-chat.com.
+
+## Design Resources
+
+**Figma Project**: https://www.figma.com/files/1565994570781438763/project/471089746
+
+Use the Figma MCP to fetch designs when implementing UI components.
+
+## Tech Stack
+
+- **Framework**: Shopify Hydrogen (Remix-based)
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Deployment**: Shopify Oxygen
+
+## Key Directories
+
+- `app/components/` - Reusable UI components
+- `app/routes/` - Page routes (Remix file-based routing)
+- `app/styles/` - Global styles and fonts
+- `app/data/` - Data fetching utilities
+- `app/graphql/` - Shopify GraphQL queries
